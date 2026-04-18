@@ -11,11 +11,11 @@ const FEATURES = [
         color: "blue"
     },
     {
-        title: "QUANTUM_GRID",
-        desc: "Hardened mesh networking that survives total infrastructure blackout.",
+        title: "RESILIENT_GRID",
+        desc: "Fault-tolerant messaging layer ensuring uninterrupted telemetry flow during infrastructure outages.",
         icon: Database,
         size: "small",
-        metric: "NON-SILOED",
+        metric: "HIGH_AVAIL",
         color: "indigo"
     },
     {
@@ -27,11 +27,11 @@ const FEATURES = [
         color: "amber"
     },
     {
-        title: "TERRAIN_ORBIT",
-        desc: "Multi-satellite synchronization for sub-meter positioning in dense urban centers.",
+        title: "PRECISION_LOCATION",
+        desc: "High-accuracy positioning engine for real-time indoor and outdoor personnel tracking.",
         icon: Map,
         size: "medium",
-        metric: "GPS_L3_SYNC",
+        metric: "SUB_METER",
         color: "emerald"
     }
 ];
