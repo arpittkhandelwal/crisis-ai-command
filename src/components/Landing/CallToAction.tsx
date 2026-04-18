@@ -26,10 +26,10 @@ export default function CallToAction() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-4xl md:text-7xl font-bold font-outfit text-white mb-8 tracking-tight leading-tight"
+                className="text-6xl md:text-[8rem] font-black font-outfit text-white mb-10 tracking-tighter leading-[0.85]"
             >
-                Ready to Establish <br/>
-                <span className="text-blue-400">Strategic Command?</span>
+                DEPLOY DEFENSE. <br/>
+                <span className="text-blue-500">ESTABLISH COMMAND.</span>
             </motion.h2>
 
             <motion.p 
@@ -37,10 +37,9 @@ export default function CallToAction() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-xl text-slate-400 font-medium mb-12 max-w-xl mx-auto leading-relaxed"
+                className="text-xl text-slate-400 font-medium mb-16 max-w-2xl mx-auto leading-relaxed"
             >
-                Join the network of secure, AI-powered emergency centers. 
-                Deploy CrisisAI and protect your infrastructure today.
+                The future of infrastructure safety is here. Secure your high-stakes assets with autonomous neural orchestration. Start your deployment in under 60 seconds.
             </motion.p>
 
             <motion.div
@@ -48,17 +47,18 @@ export default function CallToAction() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="flex flex-col sm:flex-row gap-6 justify-center"
+                className="flex flex-col sm:flex-row gap-8 justify-center items-center"
             >
                 <Link to="/login">
-                    <button className="px-10 py-5 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition-all flex items-center gap-3 shadow-2xl shadow-blue-500/20 group">
-                        Enter Command Hub
+                    <button className="px-12 py-6 rounded-2xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all flex items-center gap-4 shadow-2xl shadow-blue-500/20 group active:scale-95">
+                        <span className="text-lg">Initialize Command Hub</span>
                         <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </Link>
-                <button className="px-10 py-5 rounded-2xl bg-white/5 border border-white/10 text-white font-bold hover:bg-white/10 transition-all group">
-                    Request Technical Overview
-                </button>
+                <div className="flex items-center gap-4 px-8 py-6 rounded-2xl bg-white/5 border border-white/10 group">
+                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-sm font-black uppercase tracking-[0.2em] text-white/50">System Integrity: 100% Verified</span>
+                </div>
             </motion.div>
 
             <div className="mt-24 pt-24 border-t border-white/5 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">

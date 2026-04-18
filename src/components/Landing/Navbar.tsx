@@ -7,33 +7,37 @@ export default function Navbar() {
     <motion.nav 
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] w-[calc(100%-3rem)] max-w-5xl"
+      className="fixed top-6 left-0 right-0 z-[100] flex justify-center px-4"
     >
-      <div className="glass-white px-8 py-2.5 rounded-[2rem] flex items-center justify-center gap-12">
-        {/* Unified Centered Group */}
-        <div className="flex items-center gap-8">
-            {/* Logo */}
-            <div className="flex items-center gap-2.5 mr-4">
-              <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center shadow-lg shadow-slate-900/10">
-                <ShieldAlert className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-sm font-black font-outfit text-slate-900 uppercase tracking-tighter">CrisisAI</span>
-            </div>
+      <div className="glass-white px-10 py-3.5 rounded-[2.5rem] flex items-center justify-center gap-10 md:gap-16 w-fit mx-auto shadow-2xl shadow-slate-200/60 transition-all duration-500 hover:py-4">
+        {/* LOGO */}
+        <div className="flex items-center gap-3.5">
+          <div className="w-10 h-10 rounded-2xl bg-slate-900 flex items-center justify-center shadow-xl shadow-slate-900/20">
+            <ShieldAlert className="w-5 h-5 text-white" />
+          </div>
+          <span className="text-base font-black font-outfit text-slate-900 uppercase tracking-tighter">CrisisAI</span>
+        </div>
 
-            {/* Links */}
-            <div className="hidden lg:flex items-center gap-8 text-[9px] font-black uppercase tracking-[0.2em] text-slate-400">
-               <a href="#features" className="hover:text-slate-900 transition-colors">Intelligence</a>
-               <a href="#workflow" className="hover:text-slate-900 transition-colors">Tactical Ops</a>
-               <a href="#metrics" className="hover:text-slate-900 transition-colors">Global Net</a>
-            </div>
+        {/* LINKS LEFT */}
+        <div className="hidden lg:flex items-center gap-10 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
+           <a href="#features" className="hover:text-slate-900 transition-colors">Intelligence</a>
+           <a href="#workflow" className="hover:text-slate-900 transition-colors">Tactical Ops</a>
+        </div>
 
-            {/* Action Button */}
-            <Link to="/login" className="ml-4">
-                <button className="flex items-center gap-2 pl-4 pr-3 py-1.5 bg-slate-900 text-white rounded-lg text-[9px] font-black uppercase tracking-widest hover:bg-slate-800 transition-all shadow-lg shadow-slate-900/10 active:scale-95 group">
-                    Command Access
-                    <ChevronRight className="w-3 h-3 text-white group-hover:translate-x-0.5 transition-transform" />
-                </button>
-            </Link>
+        {/* THE CENTER COMMAND BUTTON */}
+        <Link to="/login">
+            <button className="flex items-center gap-3.5 pl-8 pr-5 py-3.5 bg-slate-900 text-white rounded-2xl text-[11px] font-black uppercase tracking-widest hover:bg-slate-800 transition-all shadow-2xl shadow-slate-900/20 active:scale-95 group">
+                Command Access
+                <div className="w-6 h-6 rounded-lg bg-white/10 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                    <ChevronRight className="w-4 h-4 text-white" />
+                </div>
+            </button>
+        </Link>
+
+        {/* LINKS RIGHT */}
+        <div className="hidden lg:flex items-center gap-10 text-[11px] font-black uppercase tracking-[0.3em] text-slate-400">
+           <a href="#metrics" className="hover:text-slate-900 transition-colors">Global Net</a>
+           <Link to="/contact" className="hover:text-slate-900 transition-colors">Support</Link>
         </div>
       </div>
     </motion.nav>

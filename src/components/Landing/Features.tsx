@@ -1,124 +1,122 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Activity, Map, Zap, ArrowRight } from "lucide-react";
+import { ShieldCheck, Activity, Map, Zap, ArrowRight, Target, Database } from "lucide-react";
 
-const features = [
-  {
-    title: "Real-Time AI Detection",
-    description: "Instantly detect anomalies like fire, smoke, and unauthorized access using state-of-the-art vision models.",
-    icon: Activity,
-    color: "bg-blue-50 text-blue-600",
-    accent: "bg-blue-600"
-  },
-  {
-    title: "Smart Evacuation Routing",
-    description: "Dynamically calculate and display the safest exit paths on live maps, avoiding detected danger zones.",
-    icon: Map,
-    color: "bg-emerald-50 text-emerald-600",
-    accent: "bg-emerald-600"
-  },
-  {
-    title: "Automated Dispatch",
-    description: "Instantly alert security personnel and emergency services with exact coordinates and situation context.",
-    icon: Zap,
-    color: "bg-amber-50 text-amber-600",
-    accent: "bg-amber-600"
-  },
-  {
-    title: "High-End Security",
-    description: "Enterprise-grade encryption and military-level access control guarantees your data is never compromised.",
-    icon: ShieldCheck,
-    color: "bg-indigo-50 text-indigo-600",
-    accent: "bg-indigo-600"
-  }
+const FEATURES = [
+    {
+        title: "NEURAL_SENTRY",
+        desc: "Autonomous computer vision that predicts structural failure before the first crack appears.",
+        icon: ShieldCheck,
+        size: "large",
+        metric: "99.9% ACCURACY",
+        color: "blue"
+    },
+    {
+        title: "QUANTUM_GRID",
+        desc: "Hardened mesh networking that survives total infrastructure blackout.",
+        icon: Database,
+        size: "small",
+        metric: "NON-SILOED",
+        color: "indigo"
+    },
+    {
+        title: "DYNAMICS_AI",
+        desc: "Real-time crowd velocity analysis and predictive evacuation physics.",
+        icon: Zap,
+        size: "small",
+        metric: "T+1.2s RESP",
+        color: "amber"
+    },
+    {
+        title: "TERRAIN_ORBIT",
+        desc: "Multi-satellite synchronization for sub-meter positioning in dense urban centers.",
+        icon: Map,
+        size: "medium",
+        metric: "GPS_L3_SYNC",
+        color: "emerald"
+    }
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3
-    }
-  }
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15
-    }
-  }
-};
 
 export default function Features() {
   return (
-    <section id="features" className="py-32 px-4 relative max-w-7xl mx-auto bg-white/50">
-      <div className="text-center mb-24">
-        <motion.div
-           initial={{ opacity: 0, scale: 0.5 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           viewport={{ once: true }}
-           className="w-16 h-1 bg-blue-600 mx-auto mb-8 rounded-full"
-        />
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-bold font-outfit mb-6 text-slate-900 leading-tight"
-        >
-          Everything You Need, <br/>
-          <span className="text-gradient">In One Precise Interface.</span>
-        </motion.h2>
-      </div>
-
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
-      >
-        {features.map((feature, idx) => (
-          <motion.div
-            key={idx}
-            variants={itemVariants}
-            whileHover={{ 
-                y: -10,
-                perspective: 1000,
-                rotateX: 2,
-                rotateY: -2
-            }}
-            className="group relative bg-white rounded-[3rem] p-12 border border-slate-100 hover:border-blue-500/20 transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-blue-500/5 cursor-pointer overflow-hidden"
-          >
-            {/* Unique Pattern Background */}
-            <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.1] transition-opacity duration-500">
-                <feature.icon className="w-40 h-40 -mr-10 -mt-10" />
-            </div>
-            
-            <div className={`w-20 h-20 rounded-3xl ${feature.color} flex items-center justify-center mb-10 transition-all duration-500 group-hover:shadow-lg group-hover:shadow-current/20 group-hover:scale-110`}>
-              <feature.icon className="w-10 h-10" />
+    <section id="features" className="py-40 bg-[#fdfdff] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        
+        <div className="container mx-auto px-6">
+            <div className="max-w-4xl mb-32">
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="flex items-center gap-3 mb-6"
+                >
+                    <div className="w-10 h-[1px] bg-blue-500" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-600">Core Infrastructure Capabilities</span>
+                </motion.div>
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="text-6xl md:text-8xl font-black font-outfit text-slate-900 tracking-tight leading-[0.9] mb-8"
+                >
+                    Engineered for <br/>
+                    <span className="text-gradient">Maximum Integrity.</span>
+                </motion.h2>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 }}
+                    className="text-xl text-slate-500 font-medium max-w-xl leading-relaxed"
+                >
+                    A unified suite of tactical tools designed to maintain operational stability in high-stakes environments.
+                </motion.p>
             </div>
 
-            <h3 className="text-3xl font-bold mb-6 font-outfit text-slate-900 group-hover:text-blue-600 transition-colors">{feature.title}</h3>
-            <p className="text-slate-500 text-lg font-medium leading-relaxed mb-8">
-              {feature.description}
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-6 min-h-[800px]">
+                {FEATURES.map((feature, i) => (
+                    <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1 }}
+                        className={`group p-12 rounded-[3.5rem] bg-white border border-slate-100 hover:border-blue-500/20 shadow-sm hover:shadow-2xl transition-all duration-700 relative overflow-hidden flex flex-col justify-between ${
+                            feature.size === "large" ? "md:col-span-2 md:row-span-2" : 
+                            feature.size === "medium" ? "md:col-span-2" : ""
+                        }`}
+                    >
+                        {/* Decorative Large Icon */}
+                        <div className="absolute -top-10 -right-10 opacity-[0.02] group-hover:opacity-[0.06] transition-opacity duration-700 pointer-events-none">
+                            <feature.icon className="w-64 h-64" />
+                        </div>
 
-            <div className="flex items-center gap-3 text-sm font-black uppercase tracking-widest text-slate-900">
-              <span className="h-px w-12 bg-slate-200 group-hover:w-20 group-hover:bg-blue-600 transition-all duration-500" />
-              Explore Capability
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                        <div>
+                            <div className="flex items-center justify-between mb-12">
+                                <div className="w-16 h-16 rounded-3xl bg-slate-50 flex items-center justify-center group-hover:bg-slate-900 transition-colors duration-500">
+                                    <feature.icon className="w-7 h-7 text-slate-400 group-hover:text-white transition-colors" />
+                                </div>
+                                <div className="text-[9px] font-black tracking-[0.2em] text-slate-300 group-hover:text-blue-500 transition-colors">
+                                    {feature.metric}
+                                </div>
+                            </div>
+                            
+                            <h3 className="text-3xl font-black font-outfit text-slate-900 mb-6 tracking-tighter group-hover:text-blue-600 transition-colors">
+                                {feature.title}
+                            </h3>
+                            <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-sm">
+                                {feature.desc}
+                            </p>
+                        </div>
+                        
+                        <div className="mt-12 flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-slate-900 transition-colors">
+                            <span className="h-px w-8 bg-slate-100 group-hover:w-12 group-hover:bg-blue-600 transition-all duration-500" />
+                            Technical Specs
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                        </div>
+                    </motion.div>
+                ))}
             </div>
-          </motion.div>
-        ))}
-      </motion.div>
+        </div>
     </section>
   );
 }

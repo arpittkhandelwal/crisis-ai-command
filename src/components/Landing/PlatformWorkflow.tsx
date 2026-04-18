@@ -3,28 +3,28 @@ import { Activity, Zap, CheckCircle, Shield, Target } from "lucide-react";
 
 const WORKFLOWS = [
     {
-        title: "NEURAL_DETECTION",
-        subtitle: "AI PHASE 01",
-        description: "Scanning multi-spectral feeds for thermal anomalies, biological distress signatures, and crowd velocity mismatches.",
+        title: "CORE_PRECISION",
+        subtitle: "SCALING PHASE 01",
+        description: "Spectral analysis of incoming telemetry clusters to isolate anomalies before they escalate into incidents.",
         icon: Target,
         color: "blue",
-        tags: ["SIG_MATCH", "THERMAL_SCAN"]
+        tags: ["NEURAL_SCAN", "PICO_SECOND_LATENCY"]
     },
     {
-        title: "TACTICAL_ORCHESTRATION",
-        subtitle: "AI PHASE 02",
-        description: "Autonomous response team dispatch and dynamic evacuation route calculation based on real-time threat vectors.",
+        title: "LIVE_MOBILIZATION",
+        subtitle: "ACTION PHASE 02",
+        description: "Instantaneous dispatch of autonomous response units with dynamic routing based on real-time threat vectors.",
         icon: Zap,
         color: "amber",
-        tags: ["ROUTING_AI", "AUTO_DISPATCH"]
+        tags: ["AUTO_ROUTING", "SYNC_DISPATCH"]
     },
     {
-        title: "STRATEGIC_RESOLUTION",
-        subtitle: "AI PHASE 03",
-        description: "Incident containment verification and automated generation of technical debriefs for forensic analysis.",
+        title: "SECURE_RESOLUTION",
+        subtitle: "COMMAND PHASE 03",
+        description: "Hardened containment stabilization and automated forensic debrief generation for post-incident audit.",
         icon: CheckCircle,
         color: "emerald",
-        tags: ["FORENSIC_GEN", "RESOLVED"]
+        tags: ["FORENSIC_GEN", "COMMAND_LOCK"]
     }
 ];
 
