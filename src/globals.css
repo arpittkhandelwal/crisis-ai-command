@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --radius: 1.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(210, 100%, 95%, 0.5) 0, transparent 50%),
+      radial-gradient(at 50% 0%, hsla(220, 100%, 92%, 0.3) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(210, 100%, 95%, 0.5) 0, transparent 50%);
+  }
+}
+
+@layer utilities {
+  .glass-white {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl shadow-slate-200/50;
+  }
+  .noise-bg {
+    position: relative;
+  }
+  .noise-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: 0.05;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+  .scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 50;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(59, 130, 246, 0.05) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.1;
+    position: absolute;
+    bottom: 100%;
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+  }
+  .vignette {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.02) 100%);
+  }
+  .tactical-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  }
+  .premium-shadow {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600;
+  }
+  .neural-mesh {
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 70%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.62 30c.05-1.54.12-3.08.12-4.62 0-3.08-.26-6.16-.76-9.23-.51-3.08-1.28-6.16-2.3-9.23L50 6h-6.15l1.02 3.08c1.02 3.08 1.79 6.15 2.3 9.23.5 3.07.77 6.15.77 9.23 0 1.54-.07 3.08-.12 4.62H54.62zM30 54.62c-1.54.05-3.08.12-4.62.12-3.08 0-6.16-.26-9.23-.76-3.08-.51-6.16-1.28-9.23-2.3L6 50v-6.15l3.08 1.02c3.08 1.02 6.15 1.79 9.23 2.3 3.07.5 6.15.77 9.23.77 1.54 0 3.08-.07 4.62-.12v6.86z' fill='%233b82f6' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted/20 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted/40;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+.animate-spin-slow {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
