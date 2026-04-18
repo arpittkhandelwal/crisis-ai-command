@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Search, Zap, CheckCircle, Shield, Target, FileText } from "lucide-react";
+import { Activity, Zap, CheckCircle, Shield, Target } from "lucide-react";
 
 const WORKFLOWS = [
     {
