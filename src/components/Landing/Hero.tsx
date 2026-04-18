@@ -24,7 +24,7 @@ export default function Hero() {
         type: "spring",
         damping: 12,
         stiffness: 100,
-      },
+      } as const,
     },
     hidden: {
       opacity: 0,
@@ -33,7 +33,7 @@ export default function Hero() {
         type: "spring",
         damping: 12,
         stiffness: 100,
-      },
+      } as const,
     },
   };
 

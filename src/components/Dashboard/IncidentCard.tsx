@@ -109,7 +109,7 @@ export default function IncidentCard({ incident }: { incident: Incident }) {
         <div className="hidden lg:block text-right">
             <div className="text-[9px] uppercase tracking-[0.2em] font-black text-slate-300 mb-1.5 text-right">Protection Status</div>
             <div className="inline-flex items-center gap-2 text-[10px] font-black text-slate-900 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-xl uppercase tracking-widest">
-               <div className={cn("w-1.5 h-1.5 rounded-full", incident.status === "resolving" ? "bg-orange-500" : "bg-emerald-500")} />
+               <div className={cn("w-1.5 h-1.5 rounded-full", incident.status !== "resolved" ? "bg-orange-500" : "bg-emerald-500")} />
                {incident.status}
             </div>
         </div>
