@@ -136,14 +136,24 @@ export default function Hero() {
       >
         <div className="bg-white rounded-[3.4rem] overflow-hidden p-4 md:p-6">
            <div className="w-full aspect-[16/10] bg-slate-50 rounded-[2.5rem] border border-slate-100 overflow-hidden flex flex-col shadow-inner relative">
-                <div className="p-10 border-b border-slate-200/50 flex items-center justify-between">
+                <div className="p-6 border-b border-slate-200/50 flex items-center justify-between bg-white/50 backdrop-blur-sm">
+                    {/* Window Controls */}
                     <div className="flex gap-2">
-                        <div className="w-10 h-2 bg-blue-500/40 rounded-full" />
-                        <div className="w-16 h-2 bg-slate-200 rounded-full" />
+                        <div className="w-3 h-3 rounded-full bg-slate-200" />
+                        <div className="w-3 h-3 rounded-full bg-slate-200" />
+                        <div className="w-3 h-3 rounded-full bg-slate-200" />
                     </div>
-                    <div className="flex gap-4">
-                        <div className="w-4 h-4 rounded-full bg-slate-100" />
-                        <div className="w-4 h-4 rounded-full bg-slate-100" />
+                    
+                    {/* Mock Command Bar */}
+                    <div className="flex-1 max-w-md mx-8">
+                        <div className="h-8 rounded-xl bg-slate-100/80 border border-slate-200/50 flex items-center px-4 gap-2">
+                            <Shield className="w-3 h-3 text-slate-400" />
+                            <div className="h-2 w-32 bg-slate-300/30 rounded-full" />
+                        </div>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                        <div className="w-8 h-8 rounded-full bg-slate-100 border border-slate-200/50" />
                     </div>
                 </div>
                 <div className="flex-1 p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
